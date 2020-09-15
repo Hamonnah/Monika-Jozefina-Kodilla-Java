@@ -5,14 +5,14 @@ import java.util.HashMap;
 
 public class OrderRequest {
 
-    public User user;
-    public LocalDateTime orderDate;
-    HashMap<Product, Integer> productPrice;
+    private final User user;
+    private final LocalDateTime orderDate;
+    HashMap<Product, Integer> productQuantities;
 
-    public OrderRequest(User user, LocalDateTime orderDate, HashMap<Product, Integer> productPrice) {
+    public OrderRequest(User user, LocalDateTime orderDate, HashMap<Product, Integer> productQuantities) {
         this.user = user;
         this.orderDate = orderDate;
-        this.productPrice = productPrice;
+        this.productQuantities = productQuantities;
     }
 
     public User getUser() {
@@ -21,8 +21,8 @@ public class OrderRequest {
     public LocalDateTime getOrderDate() {
         return orderDate;
     }
-    public HashMap<Product, Integer> getProductPrice() {
-        return productPrice;
+    public HashMap<Product, Integer> getProductQuantities() {
+        return productQuantities;
     }
 
 }

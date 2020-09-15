@@ -8,9 +8,9 @@ public class RepositoryService {
 
     Map<LocalDateTime, OrderRequest> ordersHistory = new HashMap<>();
 
-    void saveOrderInHistory(OrderRequest orderRequest){
+    void saveOrderInHistory(OrderRequest orderRequest) {
         LocalDateTime orderDate = orderRequest.getOrderDate();
-        ordersHistory.put(orderDate,orderRequest);
+        ordersHistory.put(orderDate, orderRequest);
     }
 
 }
