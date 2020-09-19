@@ -35,6 +35,6 @@ VALUES  (1, "Working", "make a plan", 1),
         (3, "Resting", "drink coffe", 1),
         (3, "Learning", "MySQL", 7),
         (3, "Bakeing", "Bake a chocolate cake", 5),
-        (3, "Cleaning", "wash floor", 9),
+        (3, "Cleaning", "wash floor", 9);
 
 COMMIT;
