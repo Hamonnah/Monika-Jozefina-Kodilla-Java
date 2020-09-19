@@ -13,11 +13,11 @@ public class OrderProcessor {
     }
 
     public OrderDto process (final OrderRequest orderRequest) {
-        boolean isOrdered = orderService.order(orderRequest.getUser());
+        boolean isOrdered = orderService.order(orderRequest.getUser(), orderRequest.getProductQuantities());
         if (isOrdered) {
             informationService.inform(orderRequest.getUser());
             repositoryService.saveOrderInHistory(orderRequest);
-            System.out.println("We are processing your order " + orderRequest.getProductPrice() + " right at this moment" + "\nDate of order " + orderRequest.getOrderDate() );
+            System.out.println("We are processing your order right at this moment" + "\nDate of order " + orderRequest.getOrderDate());
             return new OrderDto(orderRequest.getUser(), true);
         } else {
             System.out.println("Sorry, we can not process your order. Try again");

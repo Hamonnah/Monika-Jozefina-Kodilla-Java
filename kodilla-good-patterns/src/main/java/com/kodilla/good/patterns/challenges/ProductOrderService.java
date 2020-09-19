@@ -1,9 +1,11 @@
 package com.kodilla.good.patterns.challenges;
 
-public class ProductOrderService implements OrderService{
+import java.util.Map;
+
+public class ProductOrderService implements OrderService {
 
     @Override
-    public boolean order(User user) {
+    public boolean order(User user, Map<Product, Integer> productQuantities) {
         return true;
     }
 

@@ -1,7 +1,15 @@
 package com.kodilla.good.patterns.challenges;
 
-public enum Product {
+import java.math.BigDecimal;
 
-    IPHONE_11PRO, IPAD_MINI
+public class Product {
+
+    private final String name;
+    private final BigDecimal price;
+
+    public Product(String name, BigDecimal price) {
+        this.name = name;
+        this.price = price;
+    }
 
 }
