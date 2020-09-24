@@ -53,8 +53,6 @@ public class InvoiceDaoTestSuite {
         //CleanUp
         invoiceDao.deleteById(invoice1Id);
         invoiceDao.deleteById(invoice2Id);
-
-
     }
 
 }
