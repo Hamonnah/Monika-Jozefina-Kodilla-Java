@@ -14,8 +14,7 @@ import java.util.Date;
         ),
         @NamedQuery(
                 name = "Task.retrieveShortTasks",
-                query = "FROM Task WHERE duration <= 10"
-        ),
+                query = "FROM Task WHERE duration <= 10"),
         @NamedQuery(
                 name = "Task.retrieveTasksWithDurationLongerThan",
                 query = "FROM Task WHERE duration > :DURATION"
@@ -31,18 +30,14 @@ import java.util.Date;
 
 @Entity
 @Table(name = "TASKS")
-public final class Task extends javafx.concurrent.Task {
+public final class Task {
     private int id;
     private String description;
     private Date created;
     private int duration;
+    private TaskList taskList;
 
     public Task() {
-    }
-
-    @Override
-    protected Object call() throws Exception {
-        return null;
     }
 
     public Task(String description, int duration) {
@@ -91,6 +86,11 @@ public final class Task extends javafx.concurrent.Task {
         this.duration = duration;
     }
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "TASKLIST_ID")
+    public TaskList getTaskList() {
+        return taskList;
+    }
 
     public void setTaskList(TaskList taskList) {
     }
