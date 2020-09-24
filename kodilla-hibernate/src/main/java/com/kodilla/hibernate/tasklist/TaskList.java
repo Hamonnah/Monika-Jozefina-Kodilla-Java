@@ -54,4 +54,8 @@ public class TaskList {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
 }
