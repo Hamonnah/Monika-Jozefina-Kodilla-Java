@@ -61,4 +61,10 @@ public class CompanyDaoTestSuite {
         }
     }
 
+    @Test
+    public void testRetrieveEmployeesWithLastnameEqualsTo() {}
+
+    @Test
+    public void testRetrieveCompaniesWithFirstThreeLettersNameEqualsTo() {}
+
 }
