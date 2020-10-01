@@ -28,7 +28,10 @@ public class TaskListDaoTestSuite {
         String name = taskList.getListName();
         //When
         List<TaskList> readTaskList = taskListDao.findByListName(name);
+        TaskList firstTaskList = readTaskList.get(0);
         //Then
+        Assert.assertEquals(LISTNAME, firstTaskList.getListName());
+        Assert.assertEquals(DESCRIPTION, firstTaskList.getDescription());
         Assert.assertEquals(1, readTaskList.size());
         //CleanUp
         int id = readTaskList.get(0).getId();
