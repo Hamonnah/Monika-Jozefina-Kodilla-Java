@@ -27,11 +27,11 @@ public class TaskFinancialDetailsDaoTestSuite {
         //When
         List<TaskFinancialDetails> resultList = taskFinancialDetailsDao.findByPaid(false);
 
+        //CleanUp
+        taskFinancialDetailsDao.deleteAll();
+
         //Then
         Assert.assertEquals(1, resultList.size());
-
-        //CleanUp
-        taskFinancialDetailsDao.deleteById(id);
     }
 
 }
