@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Order {
 
-    private PrductService produceService;
+    private ProductService prductService;
     private final List<Item> items = new ArrayList<>();
     private final Long orderId;
     private final Long userId;
@@ -14,8 +14,8 @@ public class Order {
     private boolean isVerified = false;
     private boolean isSubmitted = false;
 
-    public Order(PrductService produceService, Long orderId, Long userId) {
-        this.produceService = produceService;
+    public Order(ProductService prductService, Long orderId, Long userId) {
+        this.prductService = prductService;
         this.orderId = orderId;
         this.userId = userId;
     }
@@ -23,7 +23,7 @@ public class Order {
     public BigDecimal calculateValue() {
         BigDecimal sum = BigDecimal.ZERO;
         for (Item item : items) {
-            sum = sum.add(produceService.getPrice(item.getProductId()))
+            sum = sum.add(prductService.getPrice(item.getProductId()))
                     .multiply(new BigDecimal(item.getQty()));
         }
         return sum;
