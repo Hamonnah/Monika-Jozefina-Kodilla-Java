@@ -5,6 +5,15 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@NamedNativeQuery(
+        name = "Company.retrieveCompanyWithTreeChars",
+        query = "SELECT * FROM COMPANIES" +
+                " WHERE (COMPANIES LIKE : %keyword%)  = :KEYWORD",
+        resultClass = Company.class
+)
+
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

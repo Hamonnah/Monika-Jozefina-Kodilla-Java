@@ -5,6 +5,13 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Employee.retrieveEmployeeWithThreeChars",
+        query = "SELECT * FROM EMPLOYEES" +
+                " WHERE (LASTNAME LIKE : %keyword%)  = :KEYWORD",
+        resultClass = Company.class
+)
+
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
