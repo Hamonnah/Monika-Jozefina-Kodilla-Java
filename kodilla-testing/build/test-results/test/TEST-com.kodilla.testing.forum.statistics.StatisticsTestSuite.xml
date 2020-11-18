@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.forum.statistics.StatisticsTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-11-18T12:13:18" hostname="Hamonnahs-MacBook-Air.local" time="0.056">
+  <properties/>
+  <testcase name="testStatisticsForLessCommentsThanPosts" classname="com.kodilla.testing.forum.statistics.StatisticsTestSuite" time="0.039"/>
+  <testcase name="testStatisticHundredUsers" classname="com.kodilla.testing.forum.statistics.StatisticsTestSuite" time="0.003"/>
+  <testcase name="testStatisticsForLessPostsThanComments" classname="com.kodilla.testing.forum.statistics.StatisticsTestSuite" time="0.003"/>
+  <testcase name="testStatisticsForThousand" classname="com.kodilla.testing.forum.statistics.StatisticsTestSuite" time="0.003"/>
+  <testcase name="testStatisticNoUser" classname="com.kodilla.testing.forum.statistics.StatisticsTestSuite" time="0.004"/>
+  <testcase name="testStatisticsForZero" classname="com.kodilla.testing.forum.statistics.StatisticsTestSuite" time="0.002"/>
+  <system-out><![CDATA[
+Test # 1
+
+Average number of posts: 0.6666666666666666
+Average number of comments: 0.3333333333333333
+Average number comments per post: 0.5
+Number of users: 3
+Number of posts: 2
+Number of comments: 1
+
+Test # 2
+
+Average number of posts: 1.0
+Average number of comments: 1.0
+Average number comments per post: 1.0
+Number of users: 100
+Number of posts: 100
+Number of comments: 100
+
+Test # 3
+
+Average number of posts: 0.3333333333333333
+Average number of comments: 0.6666666666666666
+Average number comments per post: 2.0
+Number of users: 3
+Number of posts: 1
+Number of comments: 2
+
+Test # 4
+
+Average number of posts: 333.3333333333333
+Average number of comments: 46.0
+Average number comments per post: 0.138
+Number of users: 3
+Number of posts: 1000
+Number of comments: 138
+
+Test # 5
+
+Average number of posts: NaN
+Average number of comments: NaN
+Average number comments per post: NaN
+Number of users: 0
+Number of posts: 0
+Number of comments: 0
+
+Test # 6
+
+Average number of posts: 0.0
+Average number of comments: 0.0
+Average number comments per post: NaN
+Number of users: 3
+Number of posts: 0
+Number of comments: 0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
