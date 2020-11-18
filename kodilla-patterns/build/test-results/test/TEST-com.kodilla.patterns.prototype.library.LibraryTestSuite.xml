@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns.prototype.library.LibraryTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-18T12:13:00" hostname="Hamonnahs-MacBook-Air.local" time="0.016">
+  <properties/>
+  <testcase name="testGetBooks" classname="com.kodilla.patterns.prototype.library.LibraryTestSuite" time="0.016"/>
+  <system-out><![CDATA[Library [Top 10]
+[Book{title='Disappearing Earth', author='Julia Phillips', publicationDate=2020-05-14}, Book{title='The Yellow House', author='Sarah M. Broom', publicationDate=2019-07-13}]
+[Book{title='Disappearing Earth', author='Julia Phillips', publicationDate=2020-05-14}, Book{title='The Yellow House', author='Sarah M. Broom', publicationDate=2019-07-13}]
+
+Library [Classics]
+[Book{title='Disappearing Earth', author='Julia Phillips', publicationDate=2020-05-14}, Book{title='The Yellow House', author='Sarah M. Broom', publicationDate=2019-07-13}]
+[Book{title='Disappearing Earth', author='Julia Phillips', publicationDate=2020-05-14}, Book{title='The Yellow House', author='Sarah M. Broom', publicationDate=2019-07-13}]
+
+Library [Historical]
+[Book{title='Disappearing Earth', author='Julia Phillips', publicationDate=2020-05-14}, Book{title='The Yellow House', author='Sarah M. Broom', publicationDate=2019-07-13}, Book{title='Lost Children Archive', author='Valeria Luiselli', publicationDate=2019-02-12}]
+[Book{title='Disappearing Earth', author='Julia Phillips', publicationDate=2020-05-14}, Book{title='The Yellow House', author='Sarah M. Broom', publicationDate=2019-07-13}, Book{title='Lost Children Archive', author='Valeria Luiselli', publicationDate=2019-02-12}]
+[Book{title='Disappearing Earth', author='Julia Phillips', publicationDate=2020-05-14}, Book{title='The Yellow House', author='Sarah M. Broom', publicationDate=2019-07-13}, Book{title='Lost Children Archive', author='Valeria Luiselli', publicationDate=2019-02-12}]
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
