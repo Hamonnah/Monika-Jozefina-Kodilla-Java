@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class WatcherFacade {
+public class OrderWatcher {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(com.kodilla.kodillapatterns2.facade.api.OrderFacade.class);
 
