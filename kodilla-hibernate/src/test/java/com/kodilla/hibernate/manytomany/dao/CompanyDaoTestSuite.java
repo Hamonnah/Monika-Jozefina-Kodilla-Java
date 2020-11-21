@@ -98,7 +98,7 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyZone);
         companyDao.save(gregorysSoftware);
 
-        List<Company>copaniesByThereFirstChar = companyDao.retrieveNameCompanyForFirstThreeChar("gre");
+        List<Company>copaniesByThereFirstChar = companyDao.retrieveCompanyWithNameStartingWithThreeChars("gre");
 
         //CleanUp
         companyDao.deleteAll();

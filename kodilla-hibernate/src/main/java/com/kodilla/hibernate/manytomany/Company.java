@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name = "Company.retrieveNameCompanyForFirstThreeChar",
-        query = "SELECT * FROM COMPANIES" + " WHERE SUBSTRING(COMPANY_NAME FROM 1 FOR 3) = :KEYWORD",
+        name = "Company.retrieveCompanyWithNameStartingWithThreeChars",
+        query = "SELECT * FROM COMPANIES WHERE LEFT(COMPANY_NAME, 3) = :NAME_STARTING_WITH",
         resultClass = Company.class
 )
 @Entity
