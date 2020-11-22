@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name = "Employee.retrieveEmployeeWithThreeChars",
+        name = "Employee.retrieveEmployeeWithChars",
         query = "SELECT * FROM EMPLOYEES" +
                 " WHERE (LASTNAME LIKE : %keyword%)  = :KEYWORD",
         resultClass = Company.class
