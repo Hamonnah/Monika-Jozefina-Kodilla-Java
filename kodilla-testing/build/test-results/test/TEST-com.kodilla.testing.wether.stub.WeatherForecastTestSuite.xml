@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.wether.stub.WeatherForecastTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-18T12:13:18" hostname="Hamonnahs-MacBook-Air.local" time="0.028">
-  <properties/>
-  <testcase name="testCalculateForecastWithMock" classname="com.kodilla.testing.wether.stub.WeatherForecastTestSuite" time="0.028"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
