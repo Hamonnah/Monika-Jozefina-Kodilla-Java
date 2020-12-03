@@ -1,7 +1,5 @@
 package com.kodilla.hibernate.manytomany.facade;
 
-
-
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
 import com.kodilla.hibernate.manytomany.dao.CompanyDao;
@@ -30,30 +28,39 @@ public class FacadeTestSuite {
     CompanyDao companyDao;
 
     @Test
-    public void employeeSearchByCharTest() throws CompanySearchingException {
+    public void employeeSearchByCharTest() {
 
         //Given
         Employee employee = new Employee("John", "Lemon");
-        Company company = new Company("Kodilla");
-        //employeeDao.save();
-        companyDao.save(company);
+        employeeDao.save(employee);
 
+        //When
+        List<Employee> employees = companyFacade.findEmployeeByChars("Lem");
+
+        //Then
+        try {
+            Assert.assertEquals(1, employees.size());
+        } finally {
+            employeeDao.deleteAll();
+        }
     }
 
     @Test
-    public void companySearchByCharTest() throws CompanySearchingException {
+    public void companySearchByCharTest() {
 
         //Given
         Company company = new Company("Kodilla");
         companyDao.save(company);
 
         //When
-        List<Company> companies = companyFacade.findCompanieByChars("Kod");
+        List<Company> companies = companyFacade.findCompaniesByChars("Kod");
 
         //Then
-        Assert.assertEquals(1,companies.size());
-
-        //CleanUp
-        companyDao.deleteAll();
+        try {
+        Assert.assertEquals(1, companies.size());
+        } finally {
+            companyDao.deleteAll();
+        }
     }
+
 }

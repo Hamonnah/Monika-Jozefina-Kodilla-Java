@@ -8,13 +8,14 @@ import java.util.List;
 @NamedNativeQuery(
         name = "Employee.retrieveEmployeeWithChars",
         query = "SELECT * FROM EMPLOYEES" +
-                " WHERE LASTNAME LIKE %:KEYWORD%",
-        resultClass = Company.class
+                " WHERE LASTNAME LIKE :KEYWORD",
+        resultClass = Employee.class
 )
 
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
+
     private int id;
     private String firstname;
     private String lastname;
@@ -73,4 +74,5 @@ public class Employee {
     private void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
 }

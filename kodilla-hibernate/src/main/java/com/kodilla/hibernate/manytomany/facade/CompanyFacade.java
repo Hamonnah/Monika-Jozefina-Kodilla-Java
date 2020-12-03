@@ -27,9 +27,9 @@ public class CompanyFacade {
         this.employeeDao = employeeDao;
     }
 
-    public List<Company> findCompanieByChars(String chars) {
+    public List<Company> findCompaniesByChars(String chars) {
 
-        List<Company> companies = companyDao.retrieveCompanyWithChars(chars);
+        List<Company> companies = companyDao.retrieveCompanyWithChars("%" + chars + "%");
         LOGGER.info("Searching with phrase: " + chars);
         if (companies.size() == 0) {
             LOGGER.info("There are no companies that match the search: " + chars);
@@ -42,7 +42,7 @@ public class CompanyFacade {
 
     public List<Employee> findEmployeeByChars(String chars) {
 
-        List<Employee> employees = employeeDao.retrieveEmployeeWithChars(chars);
+        List<Employee> employees = employeeDao.retrieveEmployeeWithChars("%" + chars + "%");
         LOGGER.info("Searching with : " + chars);
         if (employees.size() == 0) {
             LOGGER.info("There are no companies that match the search: " + chars);
