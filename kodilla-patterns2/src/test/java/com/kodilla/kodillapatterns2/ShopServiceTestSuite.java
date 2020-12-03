@@ -1,6 +1,5 @@
 package com.kodilla.kodillapatterns2;
 
-import com.kodilla.kodillapatterns2.facade.ShopService;
 import com.kodilla.kodillapatterns2.facade.api.ItemDto;
 import com.kodilla.kodillapatterns2.facade.api.OrderDto;
 import com.kodilla.kodillapatterns2.facade.api.OrderFacade;
@@ -14,9 +13,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ShopServiceTestSuite {
-
-    @Autowired
-    private ShopService shopService;
 
     @Autowired
     private OrderFacade orderFacade;
