@@ -8,7 +8,7 @@ import java.util.List;
 @NamedNativeQuery(
         name = "Employee.retrieveEmployeeWithChars",
         query = "SELECT * FROM EMPLOYEES" +
-                " WHERE (LASTNAME LIKE : %keyword%)  = :KEYWORD",
+                " WHERE LASTNAME LIKE %:KEYWORD%",
         resultClass = Company.class
 )
 

@@ -9,7 +9,7 @@ import java.util.List;
 @NamedNativeQuery(
         name = "Company.retrieveCompanyWithTreeChars",
         query = "SELECT * FROM COMPANIES" +
-                " WHERE (COMPANIES LIKE :KEYWORD)  = :KEYWORD",
+                " WHERE COMPANY_NAME LIKE %:KEYWORD%",
         resultClass = Company.class
 )
 
