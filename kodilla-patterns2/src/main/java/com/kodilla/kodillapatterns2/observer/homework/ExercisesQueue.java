@@ -36,8 +36,8 @@ public class ExercisesQueue implements Observable {
 
     @Override
     public void notifyObserver() {
-        for (Observer observersList : mentors) {
-            observersList.update(this);
+        for (Observer mentor : mentors) {
+            mentor.update(this);
         }
     }
 

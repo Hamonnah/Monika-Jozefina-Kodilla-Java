@@ -2,6 +2,6 @@ package com.kodilla.kodillapatterns2.observer.homework;
 
 public interface Observer {
 
-    void update(ExercisesQueue exercisesQueue);
+    void update(Observable observable);
 
 }

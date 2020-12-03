@@ -1,6 +1,6 @@
 package com.kodilla.kodillapatterns2.observer.homework;
 
-public class Mentor  implements Observer {
+public class Mentor implements Observer {
 
     private final String mentorName;
     private int count;
@@ -18,8 +18,8 @@ public class Mentor  implements Observer {
     }
 
     @Override
-    public void update(ExercisesQueue exercisesQueue) {
-        System.out.println (mentorName + ", new exercise to check: " + exercisesQueue.getName());
+    public void update(Observable observable) {
+        System.out.println (mentorName + ", new exercise to check: ");
         count++;
     }
 
