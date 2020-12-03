@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.patterns.singleton.LoggerTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-18T12:13:01" hostname="Hamonnahs-MacBook-Air.local" time="0.001">
-  <properties/>
-  <testcase name="testGetLastLog" classname="com.kodilla.patterns.singleton.LoggerTestSuite" time="0.001"/>
-  <system-out><![CDATA[Log: [Hehihi]
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
