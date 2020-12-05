@@ -1,6 +1,5 @@
 package com.kodilla.kodillapatterns2.observer.homework;
 
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
@@ -10,8 +9,8 @@ public class HomeworkTestSuite {
     public void testObserver() {
 
         //Given
-        ExercisesQueue piotrNowakExercises = new ExerciseOne();
-        ExercisesQueue janKowalskiExercises = new ExerciseTwo();
+        ExercisesQueue piotrNowakExercises = new ExercisesQueue("Hello World guide");
+        ExercisesQueue janKowalskiExercises = new ExercisesQueue("Learn Git and GitHub");
 
         Mentor monikaBe = new Mentor("Monika Be");
         Mentor filipMar = new Mentor("Filip Mar");
