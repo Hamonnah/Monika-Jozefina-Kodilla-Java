@@ -1,9 +1,11 @@
-HELP.md
+aHELP.md
 .gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**
-!**/src/test/**
+kodilla-patterns2/build/
+!../gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+**/out/
+**/build/
 
 ### STS ###
 .apt_generated
@@ -19,9 +21,9 @@ build/
 *.iws
 *.iml
 *.ipr
-**/out/
-**/build/
 out/
+!**/src/main/**/out/
+!**/src/test/**/out/
 
 ### NetBeans ###
 /nbproject/private/
