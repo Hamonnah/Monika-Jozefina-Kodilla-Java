@@ -2,6 +2,6 @@ package com.kodilla.good.patterns.food2door;
 
 public interface InformationService {
 
-    void inform(Provider provider);
+    void inform(ExtraFoodShop provider);
 
 }

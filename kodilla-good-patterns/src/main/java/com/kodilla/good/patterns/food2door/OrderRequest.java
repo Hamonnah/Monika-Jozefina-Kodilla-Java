@@ -2,29 +2,32 @@ package com.kodilla.good.patterns.food2door;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.Map;
 
 public class OrderRequest {
 
-    Provider provider;
     LocalDateTime orderDate;
-    HashMap<Product, Integer> quantityOfOrderedProducts;
+    Map<Product, Integer> quantityOfOrderedProducts;
+    Boolean status;
 
-    public OrderRequest(Provider provider, HashMap<Product, Integer> quantityOfOrderedProducts, LocalDateTime orderDate) {
-        this.provider = provider;
-        this.quantityOfOrderedProducts = quantityOfOrderedProducts;
-        this.orderDate = orderDate;
+    public OrderRequest(Boolean status) {
+        this.status = status;
     }
 
-    public Provider getProvider() {
-        return provider;
+    public OrderRequest(Map<Product, Integer> quantityOfOrderedProducts, LocalDateTime orderDate) {
+        this.quantityOfOrderedProducts = quantityOfOrderedProducts;
+        this.orderDate = orderDate;
     }
 
     public LocalDateTime getOrderDate() {
         return orderDate;
     }
 
-    public HashMap<Product, Integer> getQuantityOfOrderedProducts() {
+    public Map<Product, Integer> getQuantityOfOrderedProducts() {
         return quantityOfOrderedProducts;
     }
 
+    public Boolean getStatus() {
+        return status;
+    }
 }

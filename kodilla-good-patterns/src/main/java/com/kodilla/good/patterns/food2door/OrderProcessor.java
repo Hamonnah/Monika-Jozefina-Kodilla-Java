@@ -1,5 +1,9 @@
 package com.kodilla.good.patterns.food2door;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class OrderProcessor {
 
     private final InformationService informationService;
@@ -11,6 +15,17 @@ public class OrderProcessor {
     }
 
     public OrderDeliveryDto process(OrderRequest orderRequest) {
+        List<Shop> shops = orderRequest.getQuantityOfOrderedProducts().keySet().stream()
+                .map(Product::getShop)
+                .distinct()
+                .collect(Collectors.toList());
+        for (Shop shop : shops) {
+            Map<Product, Integer> shopProducts = orderRequest.quantityOfOrderedProducts.entrySet().stream()
+                    .filter(entry -> entry.getKey().getShop().equals(shop))
+                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+            shop.order(shopProducts);
+        }
+
         boolean isOrdered = orderService.order(orderRequest.getProvider());
         if (isOrdered) {
             informationService.inform(orderRequest.getProvider());

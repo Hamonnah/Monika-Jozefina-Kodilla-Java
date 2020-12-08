@@ -1,14 +1,45 @@
 package com.kodilla.good.patterns.food2door;
 
-public enum Product {
+import java.math.BigDecimal;
+import java.util.Objects;
 
-    ORGANIC_GOJI_BERRIES,
-    ORGANIC_BLACK_MACA_POWDER,
-    BEETROOT_POWDER,
-    ORGANIC_SHELLED_HEMP_SEEDS,
-    ORGANIC_GRANOVITA_HEMP_OIL,
-    GLUTEN_FREE_BROWN_BREAD_FLOUR,
-    GLUTEN_FREE_BAKING_POWER,
-    GLUTEN_FREE_ALARA_LUXURIOUS_PORRIDGE
+public class Product {
 
+    private final String name;
+    private final BigDecimal price;
+    private final Shop shop;
+
+    public Product(String name, BigDecimal price, Shop shop) {
+        this.name = name;
+        this.price = price;
+        this.shop = shop;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public Shop getShop() {
+        return shop;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
+        Product product = (Product) o;
+        return Objects.equals(name, product.name) &&
+                Objects.equals(price, product.price) &&
+                Objects.equals(shop, product.shop);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, shop);
+    }
+
+}
