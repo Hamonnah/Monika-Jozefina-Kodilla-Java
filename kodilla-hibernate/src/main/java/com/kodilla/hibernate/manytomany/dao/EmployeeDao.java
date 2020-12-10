@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
 @Transactional
 @Repository
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
