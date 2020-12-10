@@ -6,13 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name = "Company.retrieveCompanyWithNameStartingWithThreeChars",
-        query = "SELECT * FROM COMPANIES WHERE LEFT(COMPANY_NAME, 3) = :NAME_STARTING_WITH",
+        name = "Company.retrieveCompanyWithChars",
+        query = "SELECT * FROM COMPANIES" +
+                " WHERE COMPANY_NAME LIKE :KEYWORD",
         resultClass = Company.class
 )
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
+
     private int id;
     private String name;
     private List<Employee> employees = new ArrayList<>();
