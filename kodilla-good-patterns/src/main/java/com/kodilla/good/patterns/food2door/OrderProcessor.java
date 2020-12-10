@@ -15,18 +15,18 @@ public class OrderProcessor {
     }
 
     public OrderDeliveryDto process(OrderRequest orderRequest) {
-        List<Shop> shops = orderRequest.getQuantityOfOrderedProducts().keySet().stream()
+        List<Provider> providers = orderRequest.getQuantityOfOrderedProducts().keySet().stream()
                 .map(Product::getShop)
                 .distinct()
                 .collect(Collectors.toList());
-        for (Shop shop : shops) {
+        for (Provider provider : providers) {
             Map<Product, Integer> shopProducts = orderRequest.quantityOfOrderedProducts.entrySet().stream()
-                    .filter(entry -> entry.getKey().getShop().equals(shop))
+                    .filter(entry -> entry.getKey().getShop().equals(provider))
                     .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-            shop.order(shopProducts);
+            provider.order(shopProducts);
         }
 
-        boolean isOrdered = orderService.order(orderRequest.getProvider());
+       /* boolean isOrdered = orderService.order(orderRequest);
         if (isOrdered) {
             informationService.inform(orderRequest.getProvider());
             System.out.println("We are processing your delivery " + orderRequest.getQuantityOfOrderedProducts() + " right at this moment" + "\nDate of order " + orderRequest.getOrderDate() );
@@ -35,6 +35,8 @@ public class OrderProcessor {
             System.out.println("Sorry, we can not process your delivery. Try again");
             return new OrderDeliveryDto(orderRequest.getProvider(), false);
         }
+    }*/
+        return null;
     }
 
 }

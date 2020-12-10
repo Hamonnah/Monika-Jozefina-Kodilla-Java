@@ -7,12 +7,12 @@ public class Product {
 
     private final String name;
     private final BigDecimal price;
-    private final Shop shop;
+    private final Provider provider;
 
-    public Product(String name, BigDecimal price, Shop shop) {
+    public Product(String name, BigDecimal price, Provider provider) {
         this.name = name;
         this.price = price;
-        this.shop = shop;
+        this.provider = provider;
     }
 
     public String getName() {
@@ -23,8 +23,8 @@ public class Product {
         return price;
     }
 
-    public Shop getShop() {
-        return shop;
+    public Provider getShop() {
+        return provider;
     }
 
     @Override
@@ -34,12 +34,12 @@ public class Product {
         Product product = (Product) o;
         return Objects.equals(name, product.name) &&
                 Objects.equals(price, product.price) &&
-                Objects.equals(shop, product.shop);
+                Objects.equals(provider, product.provider);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, price, shop);
+        return Objects.hash(name, price, provider);
     }
 
 }

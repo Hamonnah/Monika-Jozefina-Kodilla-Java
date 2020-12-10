@@ -7,9 +7,9 @@ import java.util.HashMap;
 public class OrderRequestRetriever {
 
     public OrderRequest retrieve() {
-        ExtraFoodShop extraFoodShop = new ExtraFoodShop("ExtraFoodShop", "extraFoodShop@info.com", "tlf 545 423 236");
-        HealthyShop healthyShop = new HealthyShop("Healthy Shop", "extraFoodShop@info.com", "tlf 545 423 236");
-        GlutenFreeShop glutenFreeShop = new GlutenFreeShop("GlutenFreeShop", "extraFoodShop@info.com", "tlf 545 423 236");
+        ExtraFoodProvider extraFoodShop = new ExtraFoodProvider("ExtraFoodProvider", "extraFoodShop@info.com", "tlf 545 423 236");
+        HealthyProvider healthyShop = new HealthyProvider("Healthy Provider", "extraFoodShop@info.com", "tlf 545 423 236");
+        GlutenFreeProvider glutenFreeShop = new GlutenFreeProvider("GlutenFreeProvider", "extraFoodShop@info.com", "tlf 545 423 236");
         LocalDateTime orderDate = LocalDateTime.of(2020,05,15,15,15,10);
         HashMap<Product, Integer> orderList = new HashMap<>();
         Product blackMAcaPowder = new Product("Black Maca Powder", new BigDecimal("100.00"), extraFoodShop);
