@@ -67,7 +67,7 @@ public class CrudAppTestSuite {
                     select.selectByIndex(1);
 
                     WebElement buttonCreateCard =
-                            theForm.findElement(By.xpath(".//button[contains(@class, \"card-creation\")]");
+                            theForm.findElement(By.xpath(".//button[contains(@class, \"card-creation\")]"));
                             buttonCreateCard.click();
                 });
         Thread.sleep(5000);
