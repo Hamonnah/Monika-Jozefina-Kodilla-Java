@@ -1,21 +1,20 @@
 package com.kodilla.good.patterns.food2door;
 
-import java.util.Map;
-
-public class HealthyProvider implements Provider {
+public class HealthyFoodProvider implements FoodProvider {
 
     String providersName;
     String providersEmail;
     String providersTelephoneNumber;
 
-    public HealthyProvider(String providersName, String providersEmail, String providersTelephoneNumber) {
+    public HealthyFoodProvider(String providersName, String providersEmail, String providersTelephoneNumber) {
         this.providersName = providersName;
         this.providersEmail = providersEmail;
         this.providersTelephoneNumber = providersTelephoneNumber;
     }
 
     @Override
-    public boolean order(Map<Product, Integer> products) {
-        return true;
+    public void process(Order order) {
+        System.out.println("Healthy Food Shop thank you for shopping!");
     }
+
 }
