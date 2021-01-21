@@ -1,25 +1,30 @@
 package com.kodilla.good.patterns.food2door;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class OrderProcessor {
 
-    private final InformationService informationService;
-    private final OrderService orderService;
-
-    public OrderProcessor(InformationService informationService, OrderService orderService) {
-        this.informationService = informationService;
-        this.orderService = orderService;
+    private List<Provider> getSupplierList(Order order) {
+        return order.getOrderedProducts().keySet().stream()
+                .map(Product::getSupplier)
+                .distinct()
+                .collect(Collectors.toList());
     }
 
-    public OrderDeliveryDto process(OrderRequest orderRequest) {
-        boolean isOrdered = orderService.order(orderRequest.getProvider());
-        if (isOrdered) {
-            informationService.inform(orderRequest.getProvider());
-            System.out.println("We are processing your delivery " + orderRequest.getQuantityOfOrderedProducts() + " right at this moment" + "\nDate of order " + orderRequest.getOrderDate() );
-            return new OrderDeliveryDto(orderRequest.getProvider(), true);
-        } else {
-            System.out.println("Sorry, we can not process your delivery. Try again");
-            return new OrderDeliveryDto(orderRequest.getProvider(), false);
-        }
+    private boolean orderFromOneSupplier(Order order, Provider provider) {
+        Map<Product, Integer> productList = order.getOrderedProducts().entrySet().stream()
+                .filter(entry -> entry.getKey().getSupplier().equals(provider))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        Order singleOrder = new Order(order.getCustomer(), productList);
+        return provider.process(singleOrder);
+    }
+
+    public boolean process(Order order) {
+        return getSupplierList(order).stream()
+                .map(supplier -> orderFromOneSupplier(order, supplier))
+                .reduce(true, (result1, result2) -> result1 && result2);
     }
 
 }

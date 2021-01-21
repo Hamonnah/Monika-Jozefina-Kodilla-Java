@@ -2,6 +2,8 @@ package com.kodilla.good.patterns.food2door;
 
 public interface InformationService {
 
-    void inform(Provider provider);
+    void informOrderAccepted(Customer customer);
+
+    void informOrderRejected(Customer customer);
 
 }

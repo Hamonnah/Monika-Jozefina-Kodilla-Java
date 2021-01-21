@@ -3,12 +3,12 @@ package com.kodilla.good.patterns.food2door;
 public class Application {
 
     public static void main(String[] args) {
-
-        OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
-        OrderRequest orderRequest = orderRequestRetriever.retrieve();
-
-        OrderProcessor orderProcessor = new OrderProcessor(new MailService(), new ProductDeliveryOrderService());
-        orderProcessor.process(orderRequest);
+        OrderRetriever orderRetriever = new OrderRetriever();
+        Order order = orderRetriever.retrieve();
+        OrderService service = new OrderService(new InformationMail(), new OrdersRepository(), new OrderProcessor());
+        service.order(order);
     }
 
 }
+
+
