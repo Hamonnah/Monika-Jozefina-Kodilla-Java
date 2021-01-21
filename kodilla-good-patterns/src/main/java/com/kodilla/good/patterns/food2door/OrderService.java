@@ -1,7 +1,2 @@
-package com.kodilla.good.patterns.food2door;
-
-public interface OrderService {
-
-    boolean order(ExtraFoodFoodProvider provider);
-
+package com.kodilla.good.patterns.food2door;public class OrderService {
 }
