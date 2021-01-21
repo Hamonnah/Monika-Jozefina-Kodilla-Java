@@ -1,2 +1,7 @@
-package com.kodilla.good.patterns.food2door;public interface Repository {
+package com.kodilla.good.patterns.food2door;
+
+public interface Repository {
+
+    void saveOrder(Order order);
+
 }

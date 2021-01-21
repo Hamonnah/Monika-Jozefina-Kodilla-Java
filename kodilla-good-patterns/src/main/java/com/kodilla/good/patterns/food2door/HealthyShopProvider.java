@@ -1,11 +1,11 @@
 package com.kodilla.good.patterns.food2door;
 
-public class SupplierHealthyShop implements Supplier{
+public class HealthyShopProvider implements Provider {
 
     private final String name;
     private final String email;
 
-    public SupplierHealthyShop(String name, String email) {
+    public HealthyShopProvider(String name, String email) {
         this.name = name;
         this.email = email;
     }
@@ -20,7 +20,7 @@ public class SupplierHealthyShop implements Supplier{
 
     @Override
     public boolean process(Order order) {
-        return false;
+        return true;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class SupplierHealthyShop implements Supplier{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        SupplierHealthyShop that = (SupplierHealthyShop) o;
+        HealthyShopProvider that = (HealthyShopProvider) o;
 
         if (!name.equals(that.name)) return false;
         return email.equals(that.email);
@@ -43,7 +43,7 @@ public class SupplierHealthyShop implements Supplier{
 
     @Override
     public String toString() {
-        return "SupplierHealthyShop{" +
+        return "HealthyShopProvider{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 '}';

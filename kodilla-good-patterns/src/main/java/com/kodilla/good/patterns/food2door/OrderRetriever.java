@@ -1,30 +1,29 @@
 package com.kodilla.good.patterns.food2door;
 
-public class OrderRetriver {
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
+
+public class OrderRetriever {
 
     public Order retrieve() {
 
-        Customer customer = new Customer("Helmut", "helmut@helmut");
+        Customer customer = new Customer("Monika", "monika@dentinor.no");
 
-        Supplier extraFoodShop = new SupplierExtraFoodShop("ExtraFoodShop", "extra@gmail.com");
-        Supplier healthyShop = new SupplierHealthyShop("Healthy Shop", "healthy@gmail.com");
-        Supplier glutenFreeShop = new SupplierGlutenFreeShop("GlutenFree Shop", "gluten@shop.pl");
+        Provider extraFoodShop = new ExtraFoodShopProvider("ExtraFoodShop", "extraFoodShop@info.com");
+        Provider healthyShop = new HealthyShopProvider("Healthy Shop", "healthy@gmail.com");
+        Provider glutenFreeShop = new GlutenFreeShopProvider("GlutenFree Shop", "glutenFree@shop.pl");
 
-        Product bread = new Product("bread", new BigDecimal("3.2"), extraFoodShop);
-        Product sausage = new Product("sausage", new BigDecimal("25.50"), healthyShop);
-        Product butter = new Product("butter", new BigDecimal("4.35"), glutenFreeShop);
-        Product milk = new Product("milk", new BigDecimal("2.35"), glutenFreeShop);
-        Product wholemealBread = new Product("wholemeal bread", new BigDecimal("4.35"), extraFoodShop);
-        Product flour = new Product("flour", new BigDecimal("2.95"), healthyShop);
+        Product blackMacaPowder = new Product("Black Maca Powder", new BigDecimal("100.00"), extraFoodShop);
+        Product beetrootPowder = new Product("Beetroot Powder", new BigDecimal("180.00"), healthyShop);
+        Product organicGoi = new Product("Organic Goi", new BigDecimal("45.00"), glutenFreeShop);
 
         Map<Product, Integer> orderedProducts = new HashMap<>();
-        orderedProducts.put(bread, 3);
-        orderedProducts.put(sausage, 4);
-        orderedProducts.put(butter, 7);
-        orderedProducts.put(milk, 4);
-        orderedProducts.put(wholemealBread, 1);
-        orderedProducts.put(flour, 1);
+        orderedProducts.put(blackMacaPowder, 3);
+        orderedProducts.put(beetrootPowder, 4);
+        orderedProducts.put(organicGoi, 7);
 
         return new Order(customer, orderedProducts);
     }
+
 }

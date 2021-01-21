@@ -1,11 +1,11 @@
 package com.kodilla.good.patterns.food2door;
 
-public class SupplierGlutenFreeShop implements Supplier {
+public class GlutenFreeShopProvider implements Provider {
 
     private final String name;
     private final String email;
 
-    public SupplierGlutenFreeShop(String name, String email) {
+    public GlutenFreeShopProvider(String name, String email) {
         this.name = name;
         this.email = email;
     }
@@ -28,7 +28,7 @@ public class SupplierGlutenFreeShop implements Supplier {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        SupplierGlutenFreeShop that = (SupplierGlutenFreeShop) o;
+        GlutenFreeShopProvider that = (GlutenFreeShopProvider) o;
 
         if (!name.equals(that.name)) return false;
         return email.equals(that.email);
@@ -43,7 +43,7 @@ public class SupplierGlutenFreeShop implements Supplier {
 
     @Override
     public String toString() {
-        return "SupplierGlutenFreeShop{" +
+        return "GlutenFreeShopProvider{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 '}';
