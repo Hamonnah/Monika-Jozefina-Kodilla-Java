@@ -1,4 +1,4 @@
-package food2door;
+package com.kodilla.good.patterns.food2door;
 
 import java.math.BigDecimal;
 
