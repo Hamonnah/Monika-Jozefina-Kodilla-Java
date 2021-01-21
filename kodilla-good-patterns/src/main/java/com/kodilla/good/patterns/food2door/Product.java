@@ -1,46 +1,58 @@
-package com.kodilla.good.patterns.food2door;
+package food2door;
 
-import java.util.Objects;
+import java.math.BigDecimal;
 
 public class Product {
 
-    private String name;
-    private int price;
-    private int quantity;
+    private final String productName;
+    private final BigDecimal price;
+    private final Provider provider;
 
-    public Product(String name, int price) {
-        this.name = name;
+    public Product(String productName, BigDecimal price, Provider provider) {
+        this.productName = productName;
         this.price = price;
+        this.provider = provider;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public String getProductName() {
+        return productName;
     }
 
-    public void addQuantity(int quantity) {
-        this.quantity +=  quantity;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void subQuantity(int quantity) {
-        if (quantity <= this.quantity) {
-            this.quantity -= quantity;
-        } else {
-            System.out.println("not enough quantity of " + name + ". Quantity is " + this.quantity + ". Order is " + quantity);
-        }
+    public Provider getSupplier() {
+        return provider;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Product product = (Product) o;
-        return price == product.price &&
-                quantity == product.quantity &&
-                Objects.equals(name, product.name);
+
+        if (!productName.equals(product.productName)) return false;
+        if (!price.equals(product.price)) return false;
+        return provider.equals(product.provider);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, price, quantity);
+        int result = productName.hashCode();
+        result = 31 * result + price.hashCode();
+        result = 31 * result + provider.hashCode();
+        return result;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productName='" + productName + '\'' +
+                ", price=" + price +
+                ", provider=" + provider +
+                '}';
+    }
+
 }
