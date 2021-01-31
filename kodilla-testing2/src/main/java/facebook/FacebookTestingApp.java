@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit;
 
 public class FacebookTestingApp {
 
-    public static final String XPATH_ACCEPT_ALL_BUTTON = "//div[contains(@class, \"_9fiw\")]/button[2]";
-    public static final String XPATH_REGISTRATION_FORM_BUTTON = "//div[contains(@class, \"6ltg\")]/a[1]";
+    public static final String XPATH_ACCEPT_ALL_BUTTON = "//*[@id=\"u_0_h\"]";
+    public static final String XPATH_REGISTRATION_FORM_BUTTON = "//*[@id=\"u_0_2\"]";
     public static final String XPATH_REGISTRATION_BOX = "//*[@id=\"reg_box\"]/div[1]";
     public static final String XPATH_SELECT_DAY_COMBOBOX = "//select[@id=\"day\"]";
     public static final String XPATH_SELECT_MONTH_COMBOBOX = "//select[@id=\"month\"]";
