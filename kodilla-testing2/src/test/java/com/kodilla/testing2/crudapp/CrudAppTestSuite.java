@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class CrudAppTestSuite {
 
-    private static final String BASE_URL = "https://hamonnah.github.io";
+    private static final String BASE_URL = "http://hamonnah.github.io";
     private WebDriver driver;
     private Random generator;
 
@@ -116,7 +116,7 @@ public class CrudAppTestSuite {
         String taskName = createCrudAppTestTask();
         System.out.println("task name: " + taskName);
         sendTestTaskToTrello(taskName);
-        //Assert.assertTrue(checkTaskExistInTrello(taskName));
+        Assert.assertTrue(checkTaskExistInTrello(taskName));
         deleteTestTask(taskName);
     }
 
